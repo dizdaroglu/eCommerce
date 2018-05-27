@@ -1,0 +1,41 @@
+﻿@using eCommerce.Entity
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+
+    <h1 class="display-4">Ekstra indirimlerle</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Fırsatları Keşfet</a>
+    </p>
+
+</div>
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="http://via.placeholder.com/239x180" alt="@urun.Name">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id">
+                            @urun.Name
+                        </a>
+      
+                    </h5>
+                    <p class="card-text">@urun.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">@urun.Price</small>
+                </div>
+            </div>
+        </div>
+    }
+    
+    
+</div>
